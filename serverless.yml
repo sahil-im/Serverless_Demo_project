@@ -1,0 +1,118 @@
+service: serverless
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+plugins:
+  - serverless-offline
+
+functions:
+  hello:
+    handler: handler.hello
+
+  addData:
+    name: addData
+    handler: addData.handler
+    events:
+      - httpApi:
+          path: /addData
+          method: post
+          cors: true
+    package:
+      individually: true
+      patterns:
+        - './function/addData.js'
+  updateData:
+    name: updateData
+    handler: updateData.handler
+    events:
+      - httpApi:
+          path: /updateData
+          method: patch
+          cors: true
+    package:
+      individually: true
+      patterns:
+        - './functions/updateData.js'
+  verifyotp:
+    name: verifyotp
+    handler: verifyotp.handler
+    events:
+      - httpApi:
+          path: /verifyotp
+          method: post
+          cors: true
+    package:
+      individually: true
+      patterns:
+        - './functions/verifyotp.js'
+  task:
+    name: task
+    handler: task.handler
+    events:
+      - httpApi:
+          path: /task
+          method: post
+          cors: true
+    package:
+      individually: true
+      patterns:
+        - './functions/task.js'
+  getData:
+    name: getData
+    handler: getData.handler
+    events:
+      - httpApi:
+          path: /getData
+          method: get
+          cors: true
+    package:
+      individually: true
+      patterns:
+        - './functions/task.js'
+  byId:
+    name: byId
+    handler: byId.handler
+    events:
+      - httpApi:
+          path: /byId
+          method: post
+          cors: true
+    package:
+      individually: true
+      patterns:
+        - './functions/byId.js'
+        
+  dataUpdate:
+    name: dataUpdate
+    handler: dataUpdate.handler
+    events:
+      - httpApi:
+          path: /dataUpdate
+          method: post
+          cors: true
+    package:
+      individually: true
+      patterns:
+        - './functions/dataUpdate.js'
+      
+  deleteData:
+    name: deleteData
+    handler: deleteData.handler
+    events:
+      - httpApi:
+          path: /deleteData
+          method: delete
+          cors: true
+    package:
+      individually: true
+      patterns:
+        - './functions/deleteData.js'
+      
+  
+
+
+

@@ -1,0 +1,18 @@
+{
+  "name": "serverless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fuctionOne.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "image-to-base64": "^2.2.0",
+    "mongodb": "^4.8.1",
+    "multer": "^1.4.5-lts.1",
+    "serverless-offline": "^9.2.4"
+  }
+}
